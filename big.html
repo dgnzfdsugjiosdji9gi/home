@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Methods Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 40px;
+      background-color: white;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript Array Methods</h2>
+  <p>Array: <span id="array"></span></p>
+
+  <button onclick="Push()">Push</button>
+  <button onclick="Pop()">Pop</button>
+  <button onclick="Unshift()">Unshift</button>
+  <button onclick="Shift()">Shift</button>
+
+  <p id="output"></p>
+
+  <script>
+    let arr = ["Penguin", "Koala", "Monkey"];
+
+    function showArray(message) {
+      document.getElementById("array").textContent = arr.join(", ");
+      document.getElementById("output").textContent = message;
+    }
+    function Push() {
+      arr.push("Dog");
+      showArray("push(): Added 'Dog' at the end");
+    }
+
+    function Pop() {
+      let removed = arr.pop();
+      showArray("pop(): Removed '" + removed + "' from the end");
+    }
+
+    function Unshift() {
+      arr.unshift("Cow");
+      showArray("unshift(): Added 'Cow' at the beginning");
+    }
+
+    function Shift() {
+      let removed = arr.shift();
+      showArray("shift(): Removed '" + removed + "' from the beginning");
+    }
+  </script>
+</body>
+</html>
